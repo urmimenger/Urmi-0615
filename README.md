@@ -14,4 +14,6 @@ Builds the app for production to the `build` folder.<br />
 ### `Errors`
 1. Sometimes while reload it fails to send message to websocket, just a refresh solves
 
+### `Live deployment`
+https://urmi-0615.vercel.app/
 
