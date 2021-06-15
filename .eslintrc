@@ -1,0 +1,113 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "plugins": ["react-hooks", "@typescript-eslint"],
+  "rules": {
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/no-named-as-default": "off",
+    "import/prefer-defaulta-export": "off",
+    "linebreak-style": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignorePattern": "^(import|export)\\s.+\\sfrom\\s.+;$|^\\s*(it|test)\\(.+\\)",
+        "ignoreTemplateLiterals": true,
+        "ignoreTrailingComments": true
+      }
+    ],
+    "no-confusing-arrow": "off",
+    "no-delete-var": "off",
+    "no-return-assign": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": [
+      "error",
+      "before",
+      { "overrides": { "=": "after" } }
+    ],
+    "strict": "off",
+    "import/prefer-default-export": "off",
+    // react
+    "jsx-a11y/accessible-emoji": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      { "extensions": [".js", ".jsx", ".tsx"] }
+    ],
+    "react/jsx-fragments": ["warn", "element"],
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": ["warn", { "skipUndeclared": true }],
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": "off",
+    "react/style-prop-object": "off",
+    "react/react-in-jsx-scope": "off",
+    // typescript
+    "@typescript-eslint/explicit-function-return-type": [
+      "off",
+      { "extensions": [".js", ".jsx", "tsx"] }
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { "functions": false }
+    ],
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.js"],
+      "rules": {
+        "no-unused-expressions": "off",
+        "jsx-a11y/control-has-associated-label": "off"
+      }
+    },
+    {
+      "files": ["scripts/**/*.js", "config/**/*.js"],
+      "rules": {
+        "consistent-return": "off",
+        "global-require": "off",
+        "import/no-extraneous-dependencies": [
+          "error",
+          { "devDependencies": true }
+        ],
+        "no-console": "off"
+      }
+    }
+  ],
+  "globals": {
+    "document": true,
+    "window": true,
+    "navigator": true,
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "test": true,
+    "jest": true,
+    "beforeEach": true,
+    "debug": true,
+    "beforeAll": true,
+    "afterEach": true,
+    "XMLHttpRequest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["src"]
+      }
+    }
+  }
+}
